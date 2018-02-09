@@ -1,0 +1,88 @@
+<mvc:View controllerName="Press_Shop_Fiori5.controller.Master" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core" xmlns:m="sap.m" xmlns:core="sap.ui.core" html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui.commons" xmlns:tnt="sap.tnt">
+	<m:App>
+		<m:pages>
+			<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+				<m:content>
+					<!-- Begin Header -->
+					<m:HBox width="100%" id="H_PLANT" alignContent="Start" alignItems="Center">
+						<m:items>
+							<sap.ui.core:Icon src="sap-icon://home" size="2em" xmlns:sap.ui.core="sap.ui.core" id="__icon0"/>
+							<m:Label text="Label" width="100%" id="__PLANT" design="Bold"/>
+							<m:HBox width="10%" id="Space6" alignContent="Start" alignItems="Center"></m:HBox>
+						</m:items>
+					</m:HBox>
+					<!-- End Header -->
+					<!-- Begin scan input  -->
+					<m:HBox width="100%" id="H_CAGE" alignContent="Start" alignItems="Center" visible="true">
+						<m:items>
+							<m:Label text="{i18n>scancage}" width="100%" id="__label_cage" design="Bold" textAlign="Center"/>
+							<m:SearchField width="100%" id="CAGE" placeholder="" search="CheckCage"/>
+						</m:items>
+					</m:HBox>
+					<m:HBox width="100%" id="H_BOX" alignContent="Start" alignItems="Center" visible="false">
+						<m:items>
+							<m:Label text="{i18n>scanbox}" width="100%" id="__label_box" design="Bold" textAlign="Center"/>
+							<m:HBox width="0.5%" id="Space_1" alignContent="Start" alignItems="Center"></m:HBox>
+							<m:SearchField width="100%" id="BOX" placeholder="" search="CheckBox"/>
+						</m:items>
+					</m:HBox>
+					<m:HBox width="100%" id="Space2" alignContent="Start" alignItems="Center"></m:HBox>
+					<m:HBox width="100%" id="H_SELE" alignContent="Start" alignItems="Center" visible="false">
+						<m:items>
+							<m:Label text="{i18n>scanseal}" width="100%" id="__label_sele" design="Bold" textAlign="Center"/>
+							<m:SearchField width="100%" id="SELE" placeholder="" search="CheckSele"/>
+						</m:items>
+					</m:HBox>
+					<!-- End scan input -->
+					<!-- Begin Table -->
+					<m:Toolbar>
+						<m:content>
+							<m:HBox width="100%" id="TOOL_BAR" alignContent="Start" alignItems="Center" visible="false">
+								<m:Button text="{i18n>closecage}" icon="sap-icon://save" tooltip="Recept selected items" press="CloseCage" type="Emphasized"/>
+								<m:Button icon="sap-icon://delete" tooltip="clear selection" press="ClearCage" text="{i18n>clearcage}" type="Emphasized"/>
+							</m:HBox>
+							<m:HBox width="100%" id="TOOL_BACK" alignContent="Start" alignItems="Center" visible="false">
+								<m:Button text="{i18n>return}" icon="sap-icon://undo" tooltip="Recept selected items" press="BackCage" type="Emphasized"/>
+							</m:HBox>
+						</m:content>
+					</m:Toolbar>
+					<m:ScrollContainer horizontal="true" vertical="true" focusable="true" height="420px">
+						<m:Table id="my_table" items="{itemModel>/items}" selectionMode="None" visibleRowCount="10" ariaLabelledBy="title" width="100%"
+							visible="false" class="tableItems">
+							<m:columns>
+								<m:Column width="2rem">
+									<m:Label text="{i18n>box}"/>
+								</m:Column>
+								<m:Column width="3rem">
+									<m:Label text="{i18n>return}"/>
+								</m:Column>
+								<m:Column width="2rem">
+									<m:Label text="{i18n>date}"/>
+								</m:Column>
+							</m:columns>
+							<m:items>
+								<m:ColumnListItem>
+									<m:cells>
+										<m:Text text="{itemModel>ZembArt}"/>
+										<m:Text text="{itemModel>TYPE_TEXT}"/>
+										<m:Text text="{itemModel>ZDATE_FORMAT}"/>
+									</m:cells>
+								</m:ColumnListItem>
+							</m:items>
+						</m:Table>
+					</m:ScrollContainer>
+					<!-- Begin Table -->
+					<m:HBox width="100%" id="Scroll" alignContent="Start" alignItems="Center" visible="false">
+						<m:HBox width="1000000%" id="Spac" alignContent="Start" alignItems="Center"></m:HBox>
+						<m:VBox width="100%" id="Scollvert" alignContent="Start" alignItems="Center">
+							<sap.ui.core:Icon src="sap-icon://collapse-group" size="1em" xmlns:sap.ui.core="sap.ui.core" id="icon11"/>
+							<sap.ui.core:Icon src="sap-icon://expand-group" size="1em" xmlns:sap.ui.core="sap.ui.core" id="icon10"/>
+						</m:VBox>
+					</m:HBox>
+				</m:content>
+			</m:Page>
+		</m:pages>
+	</m:App>
+</mvc:View>
